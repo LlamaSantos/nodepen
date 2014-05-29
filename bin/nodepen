@@ -2,9 +2,24 @@
 
 var path = require('path');
 var cp = require('child_process');
+var spawn = cp.spawn;
+var exec = cp.exec;
+var execFile = cp.exec;
 
-var cmd = './node_modules/nodewebkit/bin/nodewebkit ..';
+var launchDir = path.join(process.cwd(), "..");
+//var cmd = '../node_modules/nodewebkit/bin/nodewebkit'; //. ' + launchDir;
 
-var child = cp.exec(cmd, {cwd: path.resolve(__dirname, '..') });
+var bindir = path.join(__dirname, "..", "node_modules", "nodewebkit", "nodewebkit");
+var bin = bindir;
+if (process.platform === 'darwin') {
+	bin = path.join(bin, 'Contents', 'MacOS', 'node-webkit');
+} else if (process.platform === 'win32') {
+	bin = path.join(bin, 'nw.exe');
+} else {
+	bin = path.join(bin, 'nw');
+}
+
+//console.info('bin:\t', bin);
+var child = spawn(bin, [launchDir], { cwd: path.resolve(__dirname, '..') });
 child.unref();
-process.exit();
+//process.exit();

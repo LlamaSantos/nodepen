@@ -10,6 +10,9 @@
     "start" : "nodewebkit"
   },
   "window": {
+    "title" : "nodepen",
+    "frame" : true,
+    "show" : true,
     "toolbar": true,
     "width": 800,
     "height": 700
