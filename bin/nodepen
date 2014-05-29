@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var cp = require('child_process');
+
+var cmd = './node_modules/nodewebkit/bin/nodewebkit ..';
+
+var child = cp.exec(cmd, {cwd: path.resolve(__dirname, '..') });
+child.unref();
+process.exit();

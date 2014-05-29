@@ -1,0 +1,22 @@
+{
+  "name": "nodepen",
+  "description": "Node.js execution nodepad.",
+  "version": "0.0.1",
+  "main": "index.html",
+  "bin" : {
+      "nodepen" : "./bin/nodepen"
+  },
+  "scripts" : {
+    "start" : "nodewebkit"
+  },
+  "window": {
+    "toolbar": true,
+    "width": 800,
+    "height": 700
+  },
+  "dependencies": {
+    "underscore": "^1.6.0",
+    "brace": "^0.2.1",
+    "nodewebkit": "^0.8.6-2"
+  }
+}
