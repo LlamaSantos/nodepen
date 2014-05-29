@@ -7,8 +7,7 @@ var exec = cp.exec;
 var execFile = cp.exec;
 
 var launchDir = path.join(process.cwd(), "..");
-//var cmd = '../node_modules/nodewebkit/bin/nodewebkit'; //. ' + launchDir;
-
+var cwd = path.resolve(__dirname, "..");
 var bindir = path.join(__dirname, "..", "node_modules", "nodewebkit", "nodewebkit");
 var bin = bindir;
 if (process.platform === 'darwin') {
@@ -19,7 +18,5 @@ if (process.platform === 'darwin') {
 	bin = path.join(bin, 'nw');
 }
 
-//console.info('bin:\t', bin);
-var child = spawn(bin, [launchDir], { cwd: path.resolve(__dirname, '..') });
+var child = spawn(bin, [cwd], { cwd: launchDir });
 child.unref();
-//process.exit();
