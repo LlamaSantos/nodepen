@@ -10,6 +10,7 @@ var launchDir = path.join(process.cwd(), "..");
 var cwd = path.resolve(__dirname, "..");
 var bindir = path.join(__dirname, "..", "node_modules", "nodewebkit", "nodewebkit");
 var bin = bindir;
+
 if (process.platform === 'darwin') {
 	bin = path.join(bin, 'Contents', 'MacOS', 'node-webkit');
 } else if (process.platform === 'win32') {
@@ -17,6 +18,6 @@ if (process.platform === 'darwin') {
 } else {
 	bin = path.join(bin, 'nw');
 }
-
+console.info(bin, launchDir);
 var child = spawn(bin, [cwd], { cwd: launchDir });
 child.unref();

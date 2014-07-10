@@ -18,7 +18,7 @@
     "height": 700
   },
   "dependencies": {
-    "underscore": "^1.6.0"
+    "underscore": "^1.6.0",
     "nodewebkit": "^0.8.6-2"
   }
 }
