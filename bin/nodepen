@@ -2,11 +2,11 @@
 
 var path = require('path');
 var cp = require('child_process');
-var exec = cp.exec;
 
 var launchDir = path.join(process.cwd());
-var cmd = './node_modules/nodewebkit/bin/nodewebkit . ' + launchDir;
+var cwd = path.resolve(__dirname, "..");
+var cmd = './node_modules/nodewebkit/bin/nodewebkit';
 
-var child = exec(cmd, {cwd: path.resolve(__dirname, "..") });
+var child = cp.exec(cmd, { cwd: cwd });
 child.unref();
 process.exit();
