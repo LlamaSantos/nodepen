@@ -1,13 +1,14 @@
 {
   "name": "nodepen",
   "description": "Node.js execution nodepad.",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "main": "index.html",
   "bin" : {
       "nodepen" : "./bin/nodepen"
   },
   "scripts" : {
-    "start" : "nodewebkit"
+    "start" : "nodewebkit",
+    "install" : ""
   },
   "window": {
     "title" : "nodepen",
