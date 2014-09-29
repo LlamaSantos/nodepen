@@ -1,7 +1,7 @@
 {
   "name": "nodepen",
   "description": "Node.js execution nodepad.",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "bin": {
     "nodepen": "./bin/nodepen"
   },
